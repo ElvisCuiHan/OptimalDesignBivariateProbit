@@ -384,7 +384,7 @@ if panel_selection == "One-stage D-optimal Design":
         rho_input = st.number_input("Rho value (-1 to 1)", value=0.5)
     col1, col2, col3 = st.columns(3)
     with col1:
-        n_iterations = st.number_input("Number of PSO iterations", min_value=20, max_value=300, step=5, value=90)
+        n_iterations = st.number_input("Number of PSO iterations", min_value=20, max_value=1000, step=5, value=90)
 
     # Parse inputs
     theta1 = list(map(float, theta1_input.split(',')))
@@ -461,7 +461,7 @@ elif panel_selection == "Two-stage D-optimal Design":
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        n_iterations = st.number_input("Number of PSO iterations", min_value=20, max_value=300, step=5, value=90)
+        n_iterations = st.number_input("Number of PSO iterations", min_value=20, max_value=1000, step=5, value=90)
 
     # Parse inputs
     theta1 = list(map(float, theta1_input.split(',')))
@@ -519,7 +519,6 @@ elif panel_selection == "Two-stage D-optimal Design":
         # plt.scatter(best_pos[:(d // 2)], [0] * (d // 2), c="orange")
         # # Use st.pyplot to display the figure in Streamlit
         # st.pyplot(fig)
-
 
 elif panel_selection == "Brief Introduction to Fihser Info Calclation":
 

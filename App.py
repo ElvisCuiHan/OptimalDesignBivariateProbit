@@ -385,6 +385,10 @@ if panel_selection == "One-stage D-optimal Design":
     col1, col2, col3 = st.columns(3)
     with col1:
         n_iterations = st.number_input("Number of PSO iterations", min_value=20, max_value=1000, step=5, value=90)
+    with col2:
+        low = st.number_input("Lower bound of design", value=0.2)
+    with col3:
+        upp = st.number_input("Upper bound of design", value=1.4)
 
     # Parse inputs
     theta1 = list(map(float, theta1_input.split(',')))
@@ -398,7 +402,7 @@ if panel_selection == "One-stage D-optimal Design":
 
     # Calculate D-optimal design when the button is pressed
     if st.button("Calculate D-optimal Design"):
-        low, upp = 0.2, 1.4
+        # low, upp = 0.2, 1.4
         bounds = [tuple(np.concatenate([[low] * (d // 2), [0] * (d // 2)])),
                   tuple(np.concatenate([[upp] * (d // 2), [1] * (d // 2)]))]
 
@@ -462,6 +466,10 @@ elif panel_selection == "Two-stage D-optimal Design":
     col1, col2, col3 = st.columns(3)
     with col1:
         n_iterations = st.number_input("Number of PSO iterations", min_value=20, max_value=1000, step=5, value=90)
+    with col2:
+        low = st.number_input("Lower bound of design", value=0.2)
+    with col3:
+        upp = st.number_input("Upper bound of design", value=1.4)
 
     # Parse inputs
     theta1 = list(map(float, theta1_input.split(',')))
@@ -481,7 +489,7 @@ elif panel_selection == "Two-stage D-optimal Design":
 
     # Calculate D-optimal design when the button is pressed
     if st.button("Calculate D-optimal Design"):
-        low, upp = 0.2, 1.4
+        # low, upp = 0.2, 1.4
         bounds = [tuple(np.concatenate([[low] * (d // 2), [0] * (d // 2)])),
                   tuple(np.concatenate([[upp] * (d // 2), [1] * (d // 2)]))]
 
